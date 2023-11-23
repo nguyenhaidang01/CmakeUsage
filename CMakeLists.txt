@@ -14,8 +14,10 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Quick)
 
 include_directories(include/)
 include_directories(src/Use3rdparty/include/)
+include_directories(src/other/include/)
 
 add_subdirectory(src/Use3rdparty)
+add_subdirectory(src/other)
 
 set(PROJECT_SOURCES
     src/MyMathLib.cpp include/MyMathLib.h
@@ -37,7 +39,10 @@ endif()
 target_link_libraries(CmakeUsage
   PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick)
 
-target_link_libraries(${PROJECT_NAME} LINK_PUBLIC Use3rdparty)
+target_link_libraries(${PROJECT_NAME} LINK_PUBLIC
+    Use3rdparty
+    other
+)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
