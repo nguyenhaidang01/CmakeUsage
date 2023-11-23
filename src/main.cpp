@@ -3,6 +3,7 @@
 #include <QDebug>
 #include "MyMathLib.h"
 #include "Feature3rdparty.h"
+#include "Other.h"
 
 int main(int argc, char *argv[])
 {
@@ -15,6 +16,7 @@ int main(int argc, char *argv[])
     qDebug() << "Kq = "<< MyCalculator::mySub(5, 1);
     qDebug() << "Kq = "<< Feature3rdparty::myMultiplication(5, 1);
     qDebug() << "Kq = "<< Feature3rdparty::mydivision(5, 1);
+    OtherNamespace::otherFunction();
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/qml/qml/main.qml"));
