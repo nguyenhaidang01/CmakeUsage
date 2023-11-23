@@ -1,6 +1,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-
+#include <QDebug>
+#include "MyMathLib.h"
+#include "Feature3rdparty.h"
 
 int main(int argc, char *argv[])
 {
@@ -8,6 +10,11 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
     QGuiApplication app(argc, argv);
+
+    qDebug() << "Kq = "<< MyCalculator::mySum(5, 1);
+    qDebug() << "Kq = "<< MyCalculator::mySub(5, 1);
+    qDebug() << "Kq = "<< Feature3rdparty::myMultiplication(5, 1);
+    qDebug() << "Kq = "<< Feature3rdparty::mydivision(5, 1);
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/qml/qml/main.qml"));
