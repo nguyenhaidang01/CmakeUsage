@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/qml">
+        <file>qml/main.qml</file>
+        <file>qml/Component/MyButton.qml</file>
+		<file>qml/Module/MyModule.qml</file>
+    </qresource>
+</RCC>
